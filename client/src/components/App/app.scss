@@ -1,0 +1,46 @@
+@use "../../styles/mixins" as *;
+
+.container {
+  @include container;
+}
+
+.flex {
+  @include flex("column", "nowrap");
+
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &>* {
+      width: 50%;
+    }
+  }
+
+
+  table {
+    text-align: left;
+    border-collapse: collapse;
+
+    thead {
+      border-bottom: 2px solid var(--black);
+
+      th {
+        padding: var(--padding-xs) var(--padding-s);
+      }
+    }
+
+    tbody {
+
+      tr {
+
+        &:nth-child(odd) {
+          background-color: rgb(236, 236, 236);
+        }
+      }
+
+      td {
+        padding: var(--padding-xs) var(--padding-s);
+      }
+    }
+  }
+}
